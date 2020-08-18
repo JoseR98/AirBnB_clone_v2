@@ -7,6 +7,9 @@ from fabric.api import run, put, env, local
 from datetime import datetime
 
 
+env.hosts = ['35.243.225.26', '34.75.87.53']
+
+
 def do_pack():
     """Compress web static content"""
     d = datetime.now()
@@ -17,8 +20,6 @@ def do_pack():
     if status.succeeded:
         return file_name
     return None
-
-env.hosts = ['35.243.225.26', '34.75.87.53']
 
 
 def do_deploy(archive_path):
@@ -72,10 +73,7 @@ web_static/current")
         if new_link.failed:
             result = False
 
-        if result:
-            return True
-        else:
-            return False
+        return result
     else:
         return False
 
@@ -85,5 +83,5 @@ def deploy():
     created_archive = do_pack()
     if created_archive is None:
         return False
-    result = do_deploy(archive_path)
+    result = do_deploy(created_archive)
     return result
