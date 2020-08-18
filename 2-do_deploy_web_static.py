@@ -61,9 +61,6 @@ web_static/current")
         if new_link.failed:
             result = False
 
-        if result:
-            return True
-        else:
-            return False
+        return result
     else:
         return False
