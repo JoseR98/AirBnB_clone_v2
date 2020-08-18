@@ -9,10 +9,11 @@ from datetime import datetime
 
 env.hosts = ['35.243.225.26', '34.75.87.53']
 
+
 def do_deploy(archive_path):
     """Deploy web_static content in servers"""
     if path.exists(archive_path):
-        
+
         # File name without .tgz
         file_ext = archive_path.split('/')[1]
         file_alone = file_ext.split(".")[0]
