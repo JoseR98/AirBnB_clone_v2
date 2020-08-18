@@ -79,6 +79,7 @@ web_static/current")
     else:
         return False
 
+
 def deploy():
     """Deploy web_static content"""
     created_archive = do_pack()
