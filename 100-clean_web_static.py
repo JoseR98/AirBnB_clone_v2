@@ -21,7 +21,7 @@ def do_clean(number=0):
     for f in files:
         if count > int(number):
             f_name = f.split('/')[2].split('.')[0]
-            local("sudo rm -rf /versions/{}.tgz".format(f_name))
+            local("rm -rf versions/{}.tgz".format(f_name))
             run("sudo rm -rf " + server_dir + "/{}".format(f_name))
         else:
             count += 1
