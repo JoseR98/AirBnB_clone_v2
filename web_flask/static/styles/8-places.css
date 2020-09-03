@@ -65,7 +65,7 @@ article h2 {
 .max_guest {
     width: 100px;
     height: 80px;
-    background-image: url('../images/icon_group.png');
+    background-image: url('static/images/icon_group.png');
     background-repeat: no-repeat;
     background-position-x: 25px;
     background-position-y: 10px;
@@ -74,7 +74,7 @@ article h2 {
 .number_rooms {
     width: 100px;
     height: 80px;
-    background-image: url('../images/icon_bed.png');
+    background-image: url('static/images/icon_bed.png');
     background-position: center;
     background-repeat: no-repeat;
     background-position-x: 25px;
@@ -84,7 +84,7 @@ article h2 {
 .number_bathrooms {
     width: 100px;
     height: 80px;
-    background-image: url('../images/icon_bath.png');
+    background-image: url('static/images/icon_bath.png');
     background-position: center;
     background-repeat: no-repeat;
     background-position-x: 25px;
