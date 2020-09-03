@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>AirBnB clone</title>
+
+		<link rel="shortcut icon" href="images/icon.ico" >
+
+		<link rel="stylesheet" href="static/styles/4-common.css"/>
+		<link rel="stylesheet" href="static/styles/3-header.css"/>
+		<link rel="stylesheet" href="static/styles/3-footer.css"/>
+		<link rel="stylesheet" href="static/styles/6-filters.css"/>
+		<link rel="stylesheet" href="static/styles/8-places.css"/>
+	</head>
+    <body>
+		<header>
+			<div id="header_logo"></div>
+		</header>
+		<div class="container">
+			<section class="filters">
+				<button>Search</button>
+				<div class="locations">
+					<h3>States</h3>
+					<h4>&nbsp;</h4>
+					<ul class="popover">
+						{% for s in states -%}
+						<li><h2>{{ s.name }}</h2>
+							<ul>
+								{% for c in cities -%}
+								{% if s.id == c.state_id %}
+								<li><h4>{{ c.name }}</h4></li>
+								{% endif %}
+								{%- endfor %}
+							</ul>
+						</li>
+						{% endfor %}
+					</ul>
+				</div>
+				<div class="amenities">
+					<h3>Amenities</h3>
+					<h4>&nbsp;</h4>
+					<ul class="popover">
+						{% for a in amenities %}
+						<li><h4>{{ a.name }}</h4></li>
+						{% endfor %}
+					</ul>
+				</div>
+
+			</section>
+			<section class="places">
+				<h1>Places</h1>
+				{% for place in places %}
+                <div class="article-line">
+                <article>
+                    <div class="box_top">
+                        <h2>{{ place.name }}</h2>
+                        <div class="price_by_night">${{ place.price_by_night }}</div>
+                    </div>
+                    <div class="information">
+                        <div class="max_guest">{{ place.max_guest }} Guest</div>
+                        <div class="number_rooms">{{ place.number_rooms }} Rooms</div>
+                        <div class="number_bathrooms">{{ place.number_bathrooms }} Bathrooms</div>
+                    </div>
+                    <div class="user"> <b>Owner</b>: {{ place.user.first_name }} {{ place.user.last_name }}</div>
+                    <div class="description">
+                        <p>{{ place.description|safe }}</p>
+                    </div>
+                </article>
+            </div>
+            {% endfor %}
+			</section>
+		</div>
+		<footer>
+			<p>Holberton School</p>
+		</footer>
+	</body>
+</html>
