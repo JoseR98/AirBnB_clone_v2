@@ -12,39 +12,35 @@
 	</head>
     <body>
 		<header>
-			<div id="logo"></div>
+			<div id="header_logo"></div>
 		</header>
 		<div class="container">
 			<section class="filters">
 				<div class="locations">
 					<h3>States</h3>
 					<h4>&nbsp;</h4>
-					<div class="first">
-						<ul class="popover">
-							{% for s in state -%}
-							<li><h2>{{ s.name }}</h2>
-								<ul>
-									{% for c in city -%}
-									{% if s.id == c.state_id %}
-									<li><h4>{{ c.name }}</h4></li>
-									{% endif %}
-									{%- endfor %}
-								</ul>
-							</li>
-							{% endfor %}
-						</ul>
-					</div>
+					<ul class="popover">
+						{% for s in state -%}
+						<li><h2>{{ s.name }}</h2>
+							<ul>
+								{% for c in city -%}
+								{% if s.id == c.state_id %}
+								<li><h4>{{ c.name }}</h4></li>
+								{% endif %}
+								{%- endfor %}
+							</ul>
+						</li>
+						{% endfor %}
+					</ul>
 				</div>
 				<div class="amenities">
 					<h3>Amenities</h3>
 					<h4>&nbsp;</h4>
-					<div class="second">
-						<ul class="popover">
-							{% for a in amenity %}
-							<li><h4>{{ a.name }}</h4></li>
-							{% endfor %}
-						</ul>
-					</div>
+					<ul class="popover">
+						{% for a in amenity %}
+						<li><h4>{{ a.name }}</h4></li>
+						{% endfor %}
+					</ul>
 				</div>
 				<button>Search</button>
 			</section>
