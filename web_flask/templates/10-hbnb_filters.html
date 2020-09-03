@@ -19,27 +19,28 @@
 				<button>Search</button>
 				<div class="locations">
 					<h3>States</h3>
-					<h4>&nbsp</h4>
+					<h4>&nbsp;</h4>
 					<ul class="popover">
-						{{% for s in state %}}
+						{% for s in state -%}
 						<li><h2>{{ s.name }}</h2>
 							<ul>
-								{{% for c in city %}}
-								{{% if s.id == c.state_id %}}
+								{% for c in city -%}
+								{% if s.id == c.state_id %}
 								<li><h4>{{ c.name }}</h4></li>
-								{{% endif %}}
-								{{% endfor %}}
-							</ul></li>
-						{{% endfor %}}
+								{% endif %}
+								{%- endfor %}
+							</ul>
+						</li>
+						{% endfor %}
 					</ul>
 				</div>
 				<div class="amenities">
 					<h3>Amenities</h3>
-					<h4>&nbsp</h4>
+					<h4>&nbsp;</h4>
 					<ul class="popover">
-						{{% for a in amenity %}}
+						{% for a in amenity %}
 						<li><h4>{{ a.name }}</h4></li>
-						{{% endfor %}}
+						{% endfor %}
 					</ul>
 				</div>
 
