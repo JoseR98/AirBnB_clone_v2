@@ -23,6 +23,10 @@
 
 }
 
+button:hover {
+	opacity: 90%;
+}
+
 .locations {
     height: 100%;
     width: 25%;
@@ -58,22 +62,22 @@
     opacity: 0.99;
 
 }
-.right {
+.second {
     display: none;
     margin-left: 0;
     padding-top: 13px;
     padding-bottom: 13px;
     max-height: 300px;
-    overflow: auto;
+    overflow-y: scroll;
 }
-.left {
+.first {
     display: none;
     margin-left: -1px;
     max-height: 300px;
-    overflow: auto;
+    overflow-y: scroll;
 
 }
-.left::-webkit-scrollbar, .right::-webkit-scrollbar {
+.first::-webkit-scrollbar, .second::-webkit-scrollbar {
 	display: none;
 }
 
@@ -96,8 +100,8 @@
     margin: 10px 0 0 20px;
 }
 
-.locations:hover .left,
-.amenities:hover .right {
+.locations:hover .first,
+.amenities:hover .second {
 
     display: block;
 }
